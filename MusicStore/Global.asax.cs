@@ -11,6 +11,8 @@ namespace MusicStore
     {
         protected void Application_Start()
         {
+            HtmlHelper.ClientValidationEnabled = true;
+            HtmlHelper.UnobtrusiveJavaScriptEnabled = true;
             System.Data.Entity.Database.SetInitializer(new MusicStore.Models.SampleData());
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
