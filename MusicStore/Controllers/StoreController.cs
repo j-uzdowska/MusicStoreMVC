@@ -20,14 +20,14 @@ namespace MusicStore.Controllers
         // GET: /Store/Browse?genre=
         public ActionResult Browse(string genre)
         {
-            var genreModel = storeDB.Genres.Include("Albums").Single(g => g.Name == genre);
+            var genreModel = new Genre { Name = genre };
             return View(genreModel);
         }
 
         // GET: /Store/Details
         public ActionResult Details(int id)
         {
-            var album = storeDB.Albums.Find(id);
+            var album = new Album { Title = "Album" + id };
             return View(album);
         }
     }
