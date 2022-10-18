@@ -32,7 +32,9 @@ namespace MusicStore.Controllers
             {
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
-                    MigrateShoppingCart(model.UserName); 
+                    MigrateShoppingCart(model.UserName);
+                    //Roles.CreateRole("Administrator");
+                    //Roles.AddUserToRole(model.UserName, "Administrator");
                     
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")

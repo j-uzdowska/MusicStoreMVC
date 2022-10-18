@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace MusicStore.Controllers
 {
-   // [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Administrator")]
     public class AlbumsController : Controller
     {
         private MusicStoreEntities db = new MusicStoreEntities();
